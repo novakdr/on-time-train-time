@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <!--BOOTSTRAP-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+  <!--FIREBASE-->
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  <title>On Time Train Time</title>
+</head>
+<body>
+  <!--HEADER-->
+  <div class="container">
+    <div class="jumbotron bg-dark text-center">
+      <h1 class="text-white">On Time Train Time</h1>
+      <p class="lead text-white">Chugga Choo Choo</p>
+    </div>
+  </div>
+  <!--SCHEDULE CARD    -->
+  <div class="container">
+    <div class="card border-danger">
+      <div class="card-header bg-danger text-white">Current Train Schedule</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Train Name</th>
+              <th>Destination</th>
+              <th>Frequency (min)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-output"></tbody>
+        </table>
+      </div>
+    </div>
+  </div><br/>
+  <!--ADD NEW TRAIN-->
+  <div class="container">
+    <div class="card border-danger">
+      <div class="card-header bg-danger text-white">Add Train</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="train-name-input">Train Name</label>
+            <input type="text" id="train-name-input" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="destination-input">Destination</label>
+            <input type="text" id="destination-input" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="first-train-input">First Train Time (HH:mm - military time)</label>
+            <input type="text" id="first-train-input" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label for="frequency-input">Frequency (min)</label>
+            <input type="text" id="frequency-input" class="form-control"/>
+          </div>
+          <button id="submit-button" type="Submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div><br/>
+  <!--MOMENTJS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+  <!--JOQUERY-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--JAVASCRIPT-->
+  <script src="assets/js/logic.js"> </script>
+</body>

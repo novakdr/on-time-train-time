@@ -1,0 +1,65 @@
+//output:index.html
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  //BOOTSTRAP
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css")
+  //FIREBASE
+  script(src='https://www.gstatic.com/firebasejs/4.6.2/firebase.js')
+  title On Time Train Time
+body
+  
+  //HEADER
+  .container
+    .jumbotron.bg-dark.text-center
+      h1.text-white On Time Train Time
+      p.lead.text-white Chugga Choo Choo
+  
+  //SCHEDULE CARD    
+  .container
+    .card.border-danger
+      .card-header.bg-danger.text-white Current Train Schedule
+      .card-body
+        table.table
+          thead
+            tr
+              th Train Name
+              th Destination
+              th Frequency (min)
+              th Next Arrival
+              th Minutes Away
+          tbody#schedule-output
+  
+  br
+      
+  //ADD NEW TRAIN
+  .container
+    .card.border-danger
+      .card-header.bg-danger.text-white Add Train
+      .card-body
+        form
+          .form-group
+            label(for='train-name-input') Train Name
+            input(type='text' class='form-control' id='train-name-input')
+          .form-group
+            label(for='destination-input') Destination
+            input(type='text' class='form-control' id='destination-input')
+          .form-group
+            label(for='first-train-input') First Train Time (HH:mm - military time)
+            input(type='text' class='form-control' id='first-train-input')
+          .form-group
+            label(for='frequency-input') Frequency (min)
+            input(type='text' class='form-control' id='frequency-input')
+          button.btn.btn-danger#submit-button(type='Submit') Submit
+      
+  br
+
+  //MOMENTJS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js')
+  //JOQUERY
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  //JAVASCRIPT
+  script(src='assets/js/logic.js')  
